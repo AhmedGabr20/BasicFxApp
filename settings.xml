@@ -1,0 +1,22 @@
+    <config>
+        <Lang>AR</Lang>
+        <ReportPartation>D://تقارير برنامج الغياب</ReportPartation>
+        <companyName>شركة جـــــبـــــر</companyName>
+        <companySpecialty>إدارة تـــشـــغـــيــل المـــصــــانــــع</companySpecialty>
+        <Email>ahmedaly.g.2020@gmail.com</Email>
+        <password>hhmjmtvacywknthu</password>
+        <pdfHeader>C:\\logo.png</pdfHeader>
+        <cardHeader>C:\\header.jpg</cardHeader>
+        <cardFooter>C:\\footer.jpg</cardFooter>
+        <ReceitHeader>C:\\header.jpg</ReceitHeader>
+        <backUpSetting>c:\\Program Files\\MySQL\\MySQL Workbench 8.0\\mysqldump --no-defaults --user=</backUpSetting>
+        <backUpPath>D://BackUp</backUpPath>
+        <StoreAlarm>1</StoreAlarm>
+		<database>elnoor_v2</database>
+		<databaseUser>gabr</databaseUser>
+		<databasePass>gabr</databasePass>
+		<databaseIp>localhost</databaseIp>
+		<BarcodePrinterName>localhost</BarcodePrinterName>
+		
+        
+    </config>
