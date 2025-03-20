@@ -4,6 +4,7 @@ package com.gabr.pos.Controllers;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
+
 import com.gabr.pos.Services.WindowUtils;
 import com.gabr.pos.models.UserContext;
 import javafx.fxml.FXML;
@@ -14,6 +15,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
+
 import static com.gabr.pos.Logging.logging.ERROR;
 import static com.gabr.pos.Logging.logging.logException;
 import static com.gabr.pos.Services.SettingService.COMPANY_NAME;
@@ -48,7 +50,7 @@ public class MainController implements Initializable {
         try {
             CompanyName.setText(COMPANY_NAME);
             CompanySpecialty.setText(COMPANY_SPECIALITY);
-            if (UserContext.getCurrentUser() != null){
+            if (UserContext.getCurrentUser() != null) {
                 ROle = UserContext.getCurrentUser().getRole();
                 String msg = "مرحبا : " + UserContext.getCurrentUser().getName();
                 user_name.setText(msg);

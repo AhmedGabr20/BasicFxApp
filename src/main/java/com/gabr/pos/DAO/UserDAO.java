@@ -26,6 +26,7 @@ public class UserDAO {
 
     /**
      * This Method to retrive user data by user id
+     *
      * @param userId
      * @return
      */
@@ -45,8 +46,8 @@ public class UserDAO {
             }
 
         } catch (SQLException ex) {
-            logExpWithMessage(ERROR,this.getClass().getName(),"loadUserData", ex,"Sql: %s", preparedStatement.toString());
-        }finally {
+            logExpWithMessage(ERROR, this.getClass().getName(), "loadUserData", ex, "Sql: %s", preparedStatement.toString());
+        } finally {
             // Close resources in the finally block to ensure they are always closed
             try {
                 if (resultSet != null) resultSet.close();
@@ -54,13 +55,13 @@ public class UserDAO {
                 if (connection != null) connection.close();
             } catch (SQLException ex) {
                 // Handle potential SQL exception when closing resources
-                logException(ERROR,this.getClass().getName(),"loadUserData (closing resources)", ex);
+                logException(ERROR, this.getClass().getName(), "loadUserData (closing resources)", ex);
             }
         }
         return user;
     }
 
-    public int logIn(String userName , String password) {
+    public int logIn(String userName, String password) {
         int userId = -1;
         try {
             connection = DbConnect.getConnect();
@@ -91,7 +92,7 @@ public class UserDAO {
             }
 
         } catch (SQLException ex) {
-            logExpWithMessage(ERROR, this.getClass().getName(), "logIn",ex, "Sql: %s ", preparedStatement.toString());
+            logExpWithMessage(ERROR, this.getClass().getName(), "logIn", ex, "Sql: %s ", preparedStatement.toString());
         } finally {
             // Close resources in the finally block to ensure they are always closed
             try {
@@ -103,7 +104,7 @@ public class UserDAO {
                 logException(ERROR, this.getClass().getName(), "logIn (closing resources)", e);
             }
         }
-        return userId ;
+        return userId;
     }
 
     public static boolean checkPassword(String enteredPassword, String hashedPassword) {

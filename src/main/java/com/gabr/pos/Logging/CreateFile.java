@@ -12,7 +12,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- *
  * @author a.gabr
  */
 public class CreateFile {
@@ -33,7 +32,7 @@ public class CreateFile {
             folder.mkdirs();
         }
         txtFile = new File(folder, currentDayName + ".txt");
-        
+
         if (txtFile.createNewFile()) {
             fos = new FileOutputStream(txtFile, true);
             return fos;
@@ -44,12 +43,12 @@ public class CreateFile {
             FileTime fileTime = attr.creationTime();
             DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
             String dateCreated = df.format(fileTime.toMillis());
-            
-             if (currentDate.equals(dateCreated)) {
-            fos = new FileOutputStream(txtFile, true);
-        } else {
-            fos = new FileOutputStream(txtFile);
-        }
+
+            if (currentDate.equals(dateCreated)) {
+                fos = new FileOutputStream(txtFile, true);
+            } else {
+                fos = new FileOutputStream(txtFile);
+            }
 
         }
         return fos;

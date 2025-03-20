@@ -19,7 +19,7 @@ public class WindowUtils {
     /**
      * Opens a new window with the specified FXML view and custom close behavior.
      *
-     * @param fxmlPath The path to the FXML file to load.
+     * @param fxmlPath      The path to the FXML file to load.
      * @param onCloseAction The action to execute when the window is closed.
      */
     public static void OPEN_WINDOW(String fxmlPath, Runnable onCloseAction) {
@@ -31,9 +31,9 @@ public class WindowUtils {
             stage.setScene(scene);
             stage.getIcons().add(new Image(WindowUtils.class.getResourceAsStream(iconImagePath)));
 
-            if(onCloseAction != null)
-            // Handle window close event
-            stage.setOnCloseRequest(event -> onCloseAction.run());
+            if (onCloseAction != null)
+                // Handle window close event
+                stage.setOnCloseRequest(event -> onCloseAction.run());
 
             stage.show();
         } catch (Exception e) {
@@ -45,13 +45,14 @@ public class WindowUtils {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.close();
     }
+
     public static void CLOSE(ActionEvent event) {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.close();
     }
 
-    public static String iconImagePath= "/images/company_logo.png";
-    public static String EXCEL_ICON= "/images/excel.png";
+    public static String iconImagePath = "/images/company_logo.png";
+    public static String EXCEL_ICON = "/images/excel.png";
     public static int ALERT_WARNING = 1;
     public static int ALERT_ERROR = 2;
     public static int ALERT_CONFIRMATION = 3;
@@ -68,23 +69,21 @@ public class WindowUtils {
     public static final String ADD_COMPANIES_PAGE = "/screen/addCompany.fxml";
     public static final String ADD_ITEM_PAGE = "/screen/addItem.fxml";
     public static final String VIEW_CUSTOMER_PAGE = "/screen/viewCustomer.fxml";
-    public static final String CUSTOMER_PROFILE_PAGE = "/screen/customerProfile.fxml" ;
-    public static final String VIEW_SALES_PAGE = "/screen/viewSales.fxml" ;
-    public static final String EDIT_SALES_PAGE = "/screen/editSales.fxml" ;
-
-
+    public static final String CUSTOMER_PROFILE_PAGE = "/screen/customerProfile.fxml";
+    public static final String VIEW_SALES_PAGE = "/screen/viewSales.fxml";
+    public static final String EDIT_SALES_PAGE = "/screen/editSales.fxml";
 
 
     // Alert
-    public static void ALERT(String header , String message , int type) {
-        Alert.AlertType alertType = Alert.AlertType.INFORMATION ;
-        if(type == 1){
+    public static void ALERT(String header, String message, int type) {
+        Alert.AlertType alertType = Alert.AlertType.INFORMATION;
+        if (type == 1) {
             alertType = Alert.AlertType.WARNING;
-        }else if (type == 2){
+        } else if (type == 2) {
             alertType = Alert.AlertType.ERROR;
-        }else if (type == 3){
+        } else if (type == 3) {
             alertType = Alert.AlertType.CONFIRMATION;
-        }else if (type == 4){
+        } else if (type == 4) {
             alertType = Alert.AlertType.INFORMATION;
         }
         Alert alert = new Alert(alertType);
@@ -109,13 +108,14 @@ public class WindowUtils {
 //            stage.show();
             OPEN_WINDOW(
                     MAIN_PAGE,
-                    ()-> OPEN_LOGIN_PAGE()
+                    () -> OPEN_LOGIN_PAGE()
             );
         } catch (Exception ex) {
-            logException(ERROR,WindowUtils.class.getName(),"OPEN_MAIN_PAGE",ex);
+            logException(ERROR, WindowUtils.class.getName(), "OPEN_MAIN_PAGE", ex);
 
         }
     }
+
     public static void OPEN_LOGIN_PAGE() {
         try {
             OPEN_WINDOW(
@@ -123,9 +123,10 @@ public class WindowUtils {
                     null
             );
         } catch (Exception ex) {
-            logException(ERROR,WindowUtils.class.getName(),"OPEN_LOGIN_PAGE",ex);
+            logException(ERROR, WindowUtils.class.getName(), "OPEN_LOGIN_PAGE", ex);
         }
     }
+
     public static void OPEN_ITEMS_PAGE() {
         try {
             OPEN_WINDOW(
@@ -136,6 +137,7 @@ public class WindowUtils {
             logException(ERROR, WindowUtils.class.getName(), "OPEN_ITEMS_PAGE", ex);
         }
     }
+
     public static void OPEN_STORE_PAGE() {
         try {
             OPEN_WINDOW(
@@ -146,6 +148,7 @@ public class WindowUtils {
             logException(ERROR, WindowUtils.class.getName(), "OPEN_STORE_PAGE", ex);
         }
     }
+
     public static void OPEN_NEW_INVOICE_PAGE() {
         try {
             OPEN_WINDOW(
@@ -156,6 +159,7 @@ public class WindowUtils {
             logException(ERROR, WindowUtils.class.getName(), "OPEN_NEW_INVOICE_PAGE", ex);
         }
     }
+
     public static void OPEN_OFFER_PRICE_PAGE() {
         try {
             OPEN_WINDOW(
@@ -166,6 +170,7 @@ public class WindowUtils {
             logException(ERROR, WindowUtils.class.getName(), "OPEN_OFFER_PRICE_PAGE", ex);
         }
     }
+
     public static void OPEN_COMPANIES_PAGE() {
         try {
             OPEN_WINDOW(
@@ -176,6 +181,7 @@ public class WindowUtils {
             logException(ERROR, WindowUtils.class.getName(), "OPEN_COMPANIES_PAGE", ex);
         }
     }
+
     public static void OPEN_DASHBOARD_PAGE() {
         try {
             OPEN_WINDOW(
@@ -186,6 +192,7 @@ public class WindowUtils {
             logException(ERROR, WindowUtils.class.getName(), "OPEN_DASHBOARD_PAGE", ex);
         }
     }
+
     public static void OPEN_ADD_ITEM_PAGE() {
         try {
             OPEN_WINDOW(
@@ -196,6 +203,7 @@ public class WindowUtils {
             logException(ERROR, WindowUtils.class.getName(), "OPEN_ADD_ITEM_PAGE", ex);
         }
     }
+
     public static void OPEN_CUSTOMER_PAGE() {
         try {
             OPEN_WINDOW(
@@ -206,6 +214,7 @@ public class WindowUtils {
             logException(ERROR, WindowUtils.class.getName(), "OPEN_CUSTOMER_PAGE", ex);
         }
     }
+
     public static void OPEN_ADD_CUSTOMER_PAGE() {
         try {
             OPEN_WINDOW(
@@ -216,6 +225,7 @@ public class WindowUtils {
             logException(ERROR, WindowUtils.class.getName(), "OPEN_ADD_CUSTOMER_PAGE", ex);
         }
     }
+
     public static void OPEN_ADD_COMPANE_PAGE() {
         try {
             OPEN_WINDOW(

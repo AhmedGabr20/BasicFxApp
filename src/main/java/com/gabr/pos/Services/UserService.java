@@ -3,6 +3,7 @@ package com.gabr.pos.Services;
 import com.gabr.pos.models.User;
 
 import java.util.Optional;
+
 import com.gabr.pos.DAO.UserDAO;
 
 import static com.gabr.pos.Services.SettingService.APP_BUNDLE;
@@ -21,11 +22,12 @@ public class UserService {
         try {
             return Optional.ofNullable(userDao.loadUserData(userId));
         } catch (Exception ex) {
-        //    LOG_EXCEP(this.getClass().getName(), "loadUserData", ex);
+            //    LOG_EXCEP(this.getClass().getName(), "loadUserData", ex);
             return Optional.empty();
         }
     }
-    public int checkLogIn(String userName ,String pass) {
+
+    public int checkLogIn(String userName, String pass) {
         // Check for empty or null username
         if (userName == null || userName.isEmpty()) {
             ALERT("", APP_BUNDLE().getString("USER_NAME_INVALID"), ALERT_WARNING);

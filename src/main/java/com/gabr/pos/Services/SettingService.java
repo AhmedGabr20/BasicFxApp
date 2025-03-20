@@ -13,22 +13,24 @@ import java.time.LocalDate;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
+import static com.gabr.pos.Logging.logging.ERROR;
+import static com.gabr.pos.Logging.logging.logException;
 import static com.gabr.pos.Services.WindowUtils.ALERT;
 import static com.gabr.pos.Services.WindowUtils.ALERT_WARNING;
 
 public class SettingService {
 
     // XML DATA
-    public static String APP_LANG ;
-    public static String DATABASE_NAME ;
-    public static String DATABASE_USER ;
-    public static String DATABASE_PASS ;
-    public static String DATABASE_IP ;
-    public static String COMPANY_NAME ;
-    public static String COMPANY_SPECIALITY ;
-    public static int STORE_ALARM ;
-    public static String BARCODE_PRINTER_NAME ;
-    public static String REPORT_PARTATION ;
+    public static String APP_LANG;
+    public static String DATABASE_NAME;
+    public static String DATABASE_USER;
+    public static String DATABASE_PASS;
+    public static String DATABASE_IP;
+    public static String COMPANY_NAME;
+    public static String COMPANY_SPECIALITY;
+    public static int STORE_ALARM;
+    public static String BARCODE_PRINTER_NAME;
+    public static String REPORT_PARTATION;
     public static String BACKP_FOLDER = "G://BACKUP";
 
 
@@ -47,9 +49,8 @@ public class SettingService {
     public static String RECEIPT_FOLDER = "//ايصالات استلام نقدية";
 
 
-
-    public static void getXmlFile(){
-        Element element = null ;
+    public static void getXmlFile() {
+        Element element = null;
         try {
             File xmlFile = new File("settings.xml");
             DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -65,9 +66,10 @@ public class SettingService {
             getXmlData(element);
 
         } catch (Exception ex) {
-            System.out.println(SettingService.class.getName()+" ** initialize > - Error open settings file : "+" # "+ex.getMessage());
+            System.out.println(SettingService.class.getName() + " ** initialize > - Error open settings file : " + " # " + ex.getMessage());
         }
     }
+
     private static void getXmlData(Element element) {
         COMPANY_NAME = element.getElementsByTagName("companyName").item(0).getTextContent();
         COMPANY_SPECIALITY = element.getElementsByTagName("companySpecialty").item(0).getTextContent();
@@ -83,14 +85,14 @@ public class SettingService {
 
     }
 
-    public static ResourceBundle APP_BUNDLE (){
+    public static ResourceBundle APP_BUNDLE() {
         Locale.setDefault(new Locale("ar"));
-        if(APP_LANG.equals("AR")){
+        if (APP_LANG.equals("AR")) {
             Locale.setDefault(new Locale("ar"));
         } else if (APP_LANG.equals("EN")) {
             Locale.setDefault(Locale.ENGLISH);
         }
-        return  ResourceBundle.getBundle("MessagesBundle", Locale.getDefault());
+        return ResourceBundle.getBundle("MessagesBundle", Locale.getDefault());
     }
 
     /**
@@ -120,12 +122,12 @@ public class SettingService {
         return !today.isAfter(expirationDate);
     }
 
-    public static void createLog(){
+    public static void createLog() {
         try {
             CreateFile cf = new CreateFile();
             System.setOut(new PrintStream(cf.getFile()));
         } catch (Exception ex) {
-         //   LOG_EXCEP("Main.java", "createLog", ex);
+            logException(ERROR, SettingService.class.getName(), "createLog", ex);
         }
     }
 
