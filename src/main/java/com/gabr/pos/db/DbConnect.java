@@ -5,7 +5,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 import static com.gabr.pos.Services.SettingService.*;
-import static com.gabr.pos.Services.exceptionHandling.LOG_EXCEP_PARAM;
 
 public class DbConnect {
 
@@ -24,7 +23,7 @@ public class DbConnect {
             connection = DriverManager.getConnection("jdbc:mysql://" + DATABASE_IP + "/" + DATABASE_NAME + "?sslmode=require", DATABASE_USER, DATABASE_PASS);
         } catch (Exception ex) {
             String param = "#ip : " + DATABASE_IP + "  #db : " + DATABASE_NAME + " #user : " + DATABASE_USER + "  #pass : " + DATABASE_PASS;
-            LOG_EXCEP_PARAM("DbConnect", "getConnect", ex, param);
+        //    LOG_EXCEP_PARAM("DbConnect", "getConnect", ex, param);
         }
         return connection;
     }

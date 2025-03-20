@@ -1,10 +1,7 @@
 package com.gabr.pos.DAO;
 
-import com.gabr.pos.Controllers.DashBoardController;
 import com.gabr.pos.Services.WindowUtils;
 import com.gabr.pos.db.DEF;
-import com.gabr.pos.db.mySqlQuery;
-import com.gabr.pos.Controllers.STATICDATA;
 import com.gabr.pos.db.DbConnect;
 import com.gabr.pos.models.User;
 import com.gabr.pos.models.UserContext;

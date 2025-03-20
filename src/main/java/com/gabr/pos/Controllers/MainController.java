@@ -72,45 +72,45 @@ public class MainController implements Initializable {
 
     @FXML
     public void customerPage(MouseEvent event) {
-        CLOSE(event);
-        OPEN_CUSTOMER_PAGE();
+//        CLOSE(event);
+//        OPEN_CUSTOMER_PAGE();
     }
 
     @FXML
     public void itemsPage(MouseEvent event) {
-        CLOSE(event);
-        OPEN_ITEMS_PAGE();
+//        CLOSE(event);
+//        OPEN_ITEMS_PAGE();
     }
 
     @FXML
     private void storesPage(MouseEvent event) {
-        CLOSE(event);
-        OPEN_STORE_PAGE();
+//        CLOSE(event);
+//        OPEN_STORE_PAGE();
     }
 
     @FXML
     private void salesPage(MouseEvent event) {
-        CLOSE(event);
-        OPEN_SALES_PAGE(LocalDate.now(), LocalDate.now());
+//        CLOSE(event);
+//        OPEN_SALES_PAGE(LocalDate.now(), LocalDate.now());
     }
 
     @FXML
     private void invoicesPage(MouseEvent event) {
-        CLOSE(event);
-        OPEN_NEW_INVOICE_PAGE();
+//        CLOSE(event);
+//        OPEN_NEW_INVOICE_PAGE();
     }
 
     @FXML
     private void reportsPage(MouseEvent event) {
-        CLOSE(event);
-        OPEN_OFFER_PRICE_PAGE();
+//        CLOSE(event);
+//        OPEN_OFFER_PRICE_PAGE();
     }
 
 
     @FXML
     public void companes(MouseEvent event) {
-        CLOSE(event);
-        OPEN_COMPANIES_PAGE();
+//        CLOSE(event);
+//        OPEN_COMPANIES_PAGE();
     }
 
     @FXML

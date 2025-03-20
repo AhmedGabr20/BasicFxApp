@@ -1,8 +1,5 @@
 package com.gabr.pos.Services;
 
-import com.gabr.pos.Controllers.*;
-import com.gabr.pos.models.customer;
-import com.gabr.pos.models.items;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -14,12 +11,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-import java.io.IOException;
-import java.time.LocalDate;
-
 import static com.gabr.pos.Logging.logging.ERROR;
 import static com.gabr.pos.Logging.logging.logException;
-import static com.gabr.pos.Services.exceptionHandling.LOG_EXCEP;
 
 public class WindowUtils {
 
@@ -233,90 +226,90 @@ public class WindowUtils {
             logException(ERROR, WindowUtils.class.getName(), "OPEN_ADD_COMPANE_PAGE", ex);
         }
     }
-    public static void OPEN_EDIT_SALES_PAGE(LocalDate from , LocalDate to) {
-        try {
-            OPEN_WINDOW(
-                    EDIT_SALES_PAGE,
-                    () -> OPEN_SALES_PAGE(from, to)
-            );
-        } catch (Exception ex) {
-            logException(ERROR, WindowUtils.class.getName(), "OPEN_EDIT_SALES_PAGE", ex);
-        }
-    }
-    public static void OPEN_SALES_PAGE(LocalDate from, LocalDate to) {
-        try {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(WindowUtils.class.getResource(VIEW_SALES_PAGE));
-            loader.load();
-            ViewSalesController viewSalesController = loader.getController();
-            viewSalesController.setTextField(from, to);
-            Scene scene = new Scene(loader.getRoot());
-            scene.setFill(Color.TRANSPARENT);
-            Stage stage = new Stage();
-            stage.setScene(scene);
-            stage.getIcons().add(new Image(WindowUtils.class.getResourceAsStream(iconImagePath)));
-            stage.setOnCloseRequest(event -> OPEN_MAIN_PAGE());
-            stage.show();
-        } catch (IOException ex) {
-            logException(ERROR, WindowUtils.class.getName(), "OPEN_SALES_PAGE", ex);
-        }
-    }
-    public static void OPEN_CUSTOMER_PROFILE(int cusId, String name) {
-        try {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(WindowUtils.class.getResource(CUSTOMER_PROFILE_PAGE));
-            loader.load();
-            CustomerProfileController customerProfileController = loader.getController();
-            customerProfileController.setTextField(cusId, name);
-            Parent parent = loader.getRoot();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(parent));
-            stage.setTitle("العميل:  " + name);
-            stage.getIcons().add(new Image(WindowUtils.class.getResourceAsStream(WindowUtils.iconImagePath)));
-            stage.setOnCloseRequest(event -> OPEN_CUSTOMER_PAGE());
-            stage.show();
-        } catch (Exception ex) {
-            logException(ERROR, WindowUtils.class.getName(), "OPEN_CUSTOMER_PROFILE", ex);
-        }
+//    public static void OPEN_EDIT_SALES_PAGE(LocalDate from , LocalDate to) {
+//        try {
+//            OPEN_WINDOW(
+//                    EDIT_SALES_PAGE,
+//                    () -> OPEN_SALES_PAGE(from, to)
+//            );
+//        } catch (Exception ex) {
+//            logException(ERROR, WindowUtils.class.getName(), "OPEN_EDIT_SALES_PAGE", ex);
+//        }
+//    }
+////    public static void OPEN_SALES_PAGE(LocalDate from, LocalDate to) {
+////        try {
+////            FXMLLoader loader = new FXMLLoader();
+////            loader.setLocation(WindowUtils.class.getResource(VIEW_SALES_PAGE));
+////            loader.load();
+////            ViewSalesController viewSalesController = loader.getController();
+////            viewSalesController.setTextField(from, to);
+////            Scene scene = new Scene(loader.getRoot());
+////            scene.setFill(Color.TRANSPARENT);
+////            Stage stage = new Stage();
+////            stage.setScene(scene);
+////            stage.getIcons().add(new Image(WindowUtils.class.getResourceAsStream(iconImagePath)));
+////            stage.setOnCloseRequest(event -> OPEN_MAIN_PAGE());
+////            stage.show();
+////        } catch (IOException ex) {
+////            logException(ERROR, WindowUtils.class.getName(), "OPEN_SALES_PAGE", ex);
+////        }
+////    }
+//    public static void OPEN_CUSTOMER_PROFILE(int cusId, String name) {
+//        try {
+//            FXMLLoader loader = new FXMLLoader();
+//            loader.setLocation(WindowUtils.class.getResource(CUSTOMER_PROFILE_PAGE));
+//            loader.load();
+//            CustomerProfileController customerProfileController = loader.getController();
+//            customerProfileController.setTextField(cusId, name);
+//            Parent parent = loader.getRoot();
+//            Stage stage = new Stage();
+//            stage.setScene(new Scene(parent));
+//            stage.setTitle("العميل:  " + name);
+//            stage.getIcons().add(new Image(WindowUtils.class.getResourceAsStream(WindowUtils.iconImagePath)));
+//            stage.setOnCloseRequest(event -> OPEN_CUSTOMER_PAGE());
+//            stage.show();
+//        } catch (Exception ex) {
+//            logException(ERROR, WindowUtils.class.getName(), "OPEN_CUSTOMER_PROFILE", ex);
+//        }
+//
+//    }
+//    public static void OPEN_EDIT_CUSTOMER_PAGE(customer customer) {
+//        try {
+//            FXMLLoader loader = new FXMLLoader();
+//            loader.setLocation(WindowUtils.class.getResource(ADD_CUSTOMER_PAGE));
+//            loader.load();
+//            AddCustomerController addCustomerController = loader.getController();
+//            addCustomerController.setTextField(customer,true);
+//            Scene scene = new Scene(loader.getRoot());
+//            scene.setFill(Color.TRANSPARENT);
+//            Stage stage = new Stage();
+//            stage.setScene(scene);
+//            stage.getIcons().add(new Image(WindowUtils.class.getResourceAsStream(WindowUtils.iconImagePath)));
+//            stage.setOnCloseRequest(event -> OPEN_CUSTOMER_PAGE());
+//            stage.show();
+//        } catch (Exception ex) {
+//            logException(ERROR, WindowUtils.class.getName(), "OPEN_EDIT_CUSTOMER_PAGE", ex);
+//        }
+//    }
 
-    }
-    public static void OPEN_EDIT_CUSTOMER_PAGE(customer customer) {
-        try {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(WindowUtils.class.getResource(ADD_CUSTOMER_PAGE));
-            loader.load();
-            AddCustomerController addCustomerController = loader.getController();
-            addCustomerController.setTextField(customer,true);
-            Scene scene = new Scene(loader.getRoot());
-            scene.setFill(Color.TRANSPARENT);
-            Stage stage = new Stage();
-            stage.setScene(scene);
-            stage.getIcons().add(new Image(WindowUtils.class.getResourceAsStream(WindowUtils.iconImagePath)));
-            stage.setOnCloseRequest(event -> OPEN_CUSTOMER_PAGE());
-            stage.show();
-        } catch (Exception ex) {
-            logException(ERROR, WindowUtils.class.getName(), "OPEN_EDIT_CUSTOMER_PAGE", ex);
-        }
-    }
-
-    public static void OPEN_EDIT_ITEM_PAGE(items item) {
-        try {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(ViewItemsController.class.getResource(ADD_ITEM_PAGE));
-            loader.load();
-            AddItemController addItemController = loader.getController();
-            addItemController.setTextField(item,true);
-            Scene scene = new Scene(loader.getRoot());
-            scene.setFill(Color.TRANSPARENT);
-            Stage stage = new Stage();
-            stage.setScene(scene);
-            stage.getIcons().add(new Image(ViewItemsController.class.getResourceAsStream(WindowUtils.iconImagePath)));
-            stage.setOnCloseRequest(event -> OPEN_ITEMS_PAGE());
-            stage.show();
-        } catch (Exception ex) {
-            logException(ERROR, WindowUtils.class.getName(), "OPEN_EDIT_ITEM_PAGE", ex);
-        }
-    }
+//    public static void OPEN_EDIT_ITEM_PAGE(items item) {
+//        try {
+//            FXMLLoader loader = new FXMLLoader();
+//            loader.setLocation(ViewItemsController.class.getResource(ADD_ITEM_PAGE));
+//            loader.load();
+//            AddItemController addItemController = loader.getController();
+//            addItemController.setTextField(item,true);
+//            Scene scene = new Scene(loader.getRoot());
+//            scene.setFill(Color.TRANSPARENT);
+//            Stage stage = new Stage();
+//            stage.setScene(scene);
+//            stage.getIcons().add(new Image(ViewItemsController.class.getResourceAsStream(WindowUtils.iconImagePath)));
+//            stage.setOnCloseRequest(event -> OPEN_ITEMS_PAGE());
+//            stage.show();
+//        } catch (Exception ex) {
+//            logException(ERROR, WindowUtils.class.getName(), "OPEN_EDIT_ITEM_PAGE", ex);
+//        }
+//    }
 
 }
 

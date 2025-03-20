@@ -5,7 +5,6 @@
  */
 package com.gabr.pos.PDF;
 
-import com.gabr.pos.Controllers.STATICDATA;
 import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
@@ -23,7 +22,6 @@ import com.itextpdf.text.pdf.PdfPageEventHelper;
 import com.itextpdf.text.pdf.PdfTemplate;
 import com.itextpdf.text.pdf.PdfWriter;
 
-import static com.gabr.pos.Services.exceptionHandling.LOG_EXCEP;
 
 /**
  *
@@ -42,7 +40,7 @@ public class HeaderFooterPageEventA5 extends PdfPageEventHelper{
             total = Image.getInstance(t);
             total.setRole(PdfName.ARTIFACT);
         } catch (DocumentException ex) {
-            LOG_EXCEP(this.getClass().getName(), "onOpenDocument", ex);
+         //   LOG_EXCEP(this.getClass().getName(), "onOpenDocument", ex);
         }
     }
 
@@ -52,7 +50,7 @@ public class HeaderFooterPageEventA5 extends PdfPageEventHelper{
              addHeader(writer);
              addFooter(writer);
          }catch (Exception ex) {
-             LOG_EXCEP(this.getClass().getName(), "onEndPage", ex);
+          //   LOG_EXCEP(this.getClass().getName(), "onEndPage", ex);
          }
     }
 
@@ -99,7 +97,7 @@ public class HeaderFooterPageEventA5 extends PdfPageEventHelper{
             // write content
             header.writeSelectedRows(0, -1, 18, 580, writer.getDirectContent());
         } catch(Exception ex) {
-            LOG_EXCEP(this.getClass().getName(), "addHeader", ex);
+         //   LOG_EXCEP(this.getClass().getName(), "addHeader", ex);
         }
     }
 
@@ -133,7 +131,7 @@ public class HeaderFooterPageEventA5 extends PdfPageEventHelper{
             footer.writeSelectedRows(0, -1, 34, 35, canvas);
             canvas.endMarkedContentSequence();
         } catch(DocumentException ex) {
-            LOG_EXCEP(this.getClass().getName(), "addFooter", ex);
+         //   LOG_EXCEP(this.getClass().getName(), "addFooter", ex);
         }
     }
 

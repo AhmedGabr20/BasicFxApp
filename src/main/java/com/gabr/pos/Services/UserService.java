@@ -1,6 +1,5 @@
 package com.gabr.pos.Services;
 
-import com.gabr.pos.Controllers.STATICDATA;
 import com.gabr.pos.models.User;
 
 import java.util.Optional;
@@ -9,7 +8,6 @@ import com.gabr.pos.DAO.UserDAO;
 import static com.gabr.pos.Services.SettingService.APP_BUNDLE;
 import static com.gabr.pos.Services.WindowUtils.ALERT;
 import static com.gabr.pos.Services.WindowUtils.ALERT_WARNING;
-import static com.gabr.pos.Services.exceptionHandling.LOG_EXCEP;
 
 public class UserService {
 
@@ -23,7 +21,7 @@ public class UserService {
         try {
             return Optional.ofNullable(userDao.loadUserData(userId));
         } catch (Exception ex) {
-            LOG_EXCEP(this.getClass().getName(), "loadUserData", ex);
+        //    LOG_EXCEP(this.getClass().getName(), "loadUserData", ex);
             return Optional.empty();
         }
     }

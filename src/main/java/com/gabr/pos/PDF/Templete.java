@@ -16,7 +16,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
 
-import static com.gabr.pos.Services.exceptionHandling.LOG_EXCEP;
 
 public class Templete {
 
@@ -36,7 +35,7 @@ public class Templete {
             ArialBase = BaseFont.createFont(
                     "c:/windows/fonts/Arial.ttf", BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
         } catch (Exception ex) {
-            LOG_EXCEP(this.getClass().getName(), "Templete", ex);
+          //  LOG_EXCEP(this.getClass().getName(), "Templete", ex);
         }
     }
 
@@ -73,7 +72,7 @@ public class Templete {
             // addTopHeaderIMG();
             addTopHeader();
         } catch (Exception ex) {
-            LOG_EXCEP(this.getClass().getName(), "openDocument", ex);
+         //   LOG_EXCEP(this.getClass().getName(), "openDocument", ex);
         }
 
     }
@@ -103,7 +102,7 @@ public class Templete {
             document.add(table);
 
         } catch (Exception ex) {
-            LOG_EXCEP(this.getClass().getName(), "addTopHeader", ex);
+          //  LOG_EXCEP(this.getClass().getName(), "addTopHeader", ex);
         }
 
     }
@@ -140,7 +139,7 @@ public class Templete {
             document.add(tableTop);
 
         } catch (Exception ex) {
-            LOG_EXCEP(this.getClass().getName(), "addTopHeaderIMG", ex);
+          //  LOG_EXCEP(this.getClass().getName(), "addTopHeaderIMG", ex);
         }
 
     }
@@ -193,7 +192,7 @@ public class Templete {
             document.add(table);
 
         } catch (Exception ex) {
-            LOG_EXCEP(this.getClass().getName(), "addTable", ex);
+         //   LOG_EXCEP(this.getClass().getName(), "addTable", ex);
         }
 
     }

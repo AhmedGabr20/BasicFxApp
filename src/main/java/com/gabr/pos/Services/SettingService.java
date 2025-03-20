@@ -15,7 +15,6 @@ import java.util.ResourceBundle;
 
 import static com.gabr.pos.Services.WindowUtils.ALERT;
 import static com.gabr.pos.Services.WindowUtils.ALERT_WARNING;
-import static com.gabr.pos.Services.exceptionHandling.LOG_EXCEP;
 
 public class SettingService {
 
@@ -126,7 +125,7 @@ public class SettingService {
             CreateFile cf = new CreateFile();
             System.setOut(new PrintStream(cf.getFile()));
         } catch (Exception ex) {
-            LOG_EXCEP("Main.java", "createLog", ex);
+         //   LOG_EXCEP("Main.java", "createLog", ex);
         }
     }
 
