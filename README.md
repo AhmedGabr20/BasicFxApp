@@ -6,7 +6,7 @@ JavaFx POS System
 - 2- install mysql database with
 - 3- run db script 'POSFullScript.sql'
 - 4- copy setting.xml file and edit configuration based on your data
--
+- test
 #After build project
 - move fat jar 'Market-1.0-SNAPSHOT-shaded.jar' and 'setting.xml'
 - then double click on jar to run
