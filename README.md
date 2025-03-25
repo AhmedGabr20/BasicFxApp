@@ -19,7 +19,7 @@ JavaFx POS System
 - ~~Adding License to The System~~
 # import
 - ~~log4j~~
-- Screen Service to saving all screen paths 
+- Screen Service to saving all screen paths   Done
 - Fillo lib issue Excel Report
 - Handle Report and Receipt
 - Handle Security in another way and make defferent roles (Create table for edit update delete for POS modules)
