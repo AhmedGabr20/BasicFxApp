@@ -72,6 +72,7 @@ public class WindowUtils {
     public static final String CUSTOMER_PROFILE_PAGE = "/screen/customerProfile.fxml";
     public static final String VIEW_SALES_PAGE = "/screen/viewSales.fxml";
     public static final String EDIT_SALES_PAGE = "/screen/editSales.fxml";
+    public static final String BACKUP_PAGE = "/screen/databaseBackup.fxml";
 
 
     // Alert
@@ -182,14 +183,14 @@ public class WindowUtils {
         }
     }
 
-    public static void OPEN_DASHBOARD_PAGE() {
+    public static void OPEN_BACKUP_PAGE() {
         try {
             OPEN_WINDOW(
-                    "/screen/dashBoard.fxml",
-                    () -> OPEN_MAIN_PAGE()
+                    BACKUP_PAGE,
+                     null
             );
         } catch (Exception ex) {
-            logException(ERROR, WindowUtils.class.getName(), "OPEN_DASHBOARD_PAGE", ex);
+            logException(ERROR, WindowUtils.class.getName(), "OPEN_BACKUP_PAGE", ex);
         }
     }
 

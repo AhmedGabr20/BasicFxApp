@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="595.0" prefWidth="838.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gabr.pos.Controllers.DatabaseBackup">
+   <children>
+      <TableView fx:id="databaseTable" layoutX="21.0" layoutY="185.0" prefHeight="370.0" prefWidth="798.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="185.0">
+         <columns>
+            <TableColumn fx:id="editCol" maxWidth="1000.0" minWidth="20.0" prefWidth="82.66665840148926" />
+            <TableColumn fx:id="resultcol" maxWidth="1000.0" minWidth="50.0" prefWidth="203.2000274658203" text="النتيجة" />
+            <TableColumn fx:id="datacol" maxWidth="1000.0" minWidth="150.0" prefWidth="152.79998779296875" text="التاريخ" />
+            <TableColumn fx:id="namecol" maxWidth="1000.0" minWidth="250.0" prefWidth="267.20001220703125" text="قاعدة البيانات" />
+         </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <VBox layoutX="319.0" layoutY="13.0" prefHeight="162.0" prefWidth="798.0" AnchorPane.bottomAnchor="423.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="157.0" prefWidth="798.0">
+               <children>
+                  <VBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="90.0" prefWidth="466.0" styleClass="box7" HBox.hgrow="ALWAYS">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="38.0" prefWidth="290.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <FontAwesomeIconView fill="WHITE" glyphName="DATABASE" size="25" />
+                              <Label alignment="CENTER" prefHeight="35.0" prefWidth="194.0" text="نسخ قواعد البيانات" textAlignment="CENTER" textFill="WHITE">
+                                 <font>
+                                    <Font name="PT Bold Heading" size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="162.0" prefWidth="290.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="62.0" prefWidth="166.0">
+                                 <children>
+                                    <VBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="125.0" styleClass="box-samll2">
+                                       <children>
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="فشل" VBox.vgrow="ALWAYS">
+                                             <font>
+                                                <Font name="PT Bold Heading" size="18.0" />
+                                             </font>
+                                          </Text>
+                                          <Label fx:id="failed_count" alignment="CENTER" prefHeight="27.0" prefWidth="178.0" text="0" textFill="#2a40a8">
+                                             <font>
+                                                <Font name="System Bold" size="18.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets bottom="10.0" left="5.0" />
+                                       </HBox.margin>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="62.0" prefWidth="166.0">
+                                 <children>
+                                    <VBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="125.0" styleClass="box-samll1">
+                                       <children>
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="نجح">
+                                             <font>
+                                                <Font name="PT Bold Heading" size="18.0" />
+                                             </font>
+                                          </Text>
+                                          <Label fx:id="success_count" alignment="CENTER" prefHeight="27.0" prefWidth="178.0" text="0" textFill="#2a40a8">
+                                             <font>
+                                                <Font name="System Bold" size="18.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets bottom="10.0" left="5.0" />
+                                       </HBox.margin>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="110.0" prefWidth="183.0">
+                                 <children>
+                                    <VBox alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="142.0" styleClass="box-samll">
+                                       <children>
+                                          <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="اجمالي">
+                                             <font>
+                                                <Font name="PT Bold Heading" size="18.0" />
+                                             </font>
+                                          </Text>
+                                          <Label fx:id="total_count" alignment="CENTER" prefHeight="27.0" prefWidth="162.0" text="0" textFill="#d7e80c">
+                                             <font>
+                                                <Font name="System Bold" size="18.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets bottom="10.0" left="10.0" right="20.0" />
+                                       </HBox.margin>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

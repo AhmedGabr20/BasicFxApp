@@ -24,7 +24,10 @@ JavaFx POS System
 - Handle Report and Receipt
 - Handle Security in another way and make defferent roles (Create table for edit update delete for POS modules)
 
-
+#BACKUP_Branch
+- handle count for success and failed 
+- select db type (mysql , oracle)
+- send mail , 
 
 
 

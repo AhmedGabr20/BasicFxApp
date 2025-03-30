@@ -17,6 +17,7 @@
 		<databasePass>gabr</databasePass>
 		<databaseIp>localhost</databaseIp>
 		<BarcodePrinterName>localhost</BarcodePrinterName>
+        <DatabaseBackup>elnoor_v2,POS,Market,center,center_test,center_v1,elnoor_v3,elnoor_v5,spring_security_custom_user_demo</DatabaseBackup>
 		
         
     </config>

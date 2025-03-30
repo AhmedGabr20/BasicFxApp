@@ -21,7 +21,6 @@ public class MainApp extends Application {
         try {
             //    createLog();
             // load Setting xml data
-            logMessage(ERROR, this.getClass().getName(), "start", "Test Start");
             SettingService.getXmlFile();
             checkLicense();
 
@@ -29,7 +28,8 @@ public class MainApp extends Application {
                 ALERT("", APP_BUNDLE().getString("CONNECTION_ERROR"), ALERT_ERROR);
                 logMessage(ERROR, this.getClass().getName(), "start", "Connection error getConnect(): %s", null);
             } else {
-                OPEN_LOGIN_PAGE();
+                //OPEN_LOGIN_PAGE();
+                OPEN_BACKUP_PAGE();
             }
         } catch (Exception ex) {
             logException(ERROR, this.getClass().getName(), "start", ex);

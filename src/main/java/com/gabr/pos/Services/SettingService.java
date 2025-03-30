@@ -31,6 +31,7 @@ public class SettingService {
     public static int STORE_ALARM;
     public static String BARCODE_PRINTER_NAME;
     public static String REPORT_PARTATION;
+    public static String DATABASES_BACKUP;
     public static String BACKP_FOLDER = "G://BACKUP";
 
 
@@ -82,6 +83,8 @@ public class SettingService {
         REPORT_PARTATION = element.getElementsByTagName("ReportPartation").item(0).getTextContent();
         BACKP_FOLDER = element.getElementsByTagName("backUpPath").item(0).getTextContent();
         APP_LANG = element.getElementsByTagName("Lang").item(0).getTextContent();
+        DATABASES_BACKUP = element.getElementsByTagName("DatabaseBackup").item(0).getTextContent();
+
 
     }
 
